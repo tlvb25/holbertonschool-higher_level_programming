@@ -17,7 +17,7 @@ int check_cycle(listint_t *list)
             fast = fast->next->next;        /* Fast pointer moves by two steps */
             
             if(slow==fast) /* If they meet then there is a loop */
-                return true;
+                return (1);
         }
-        return false; //No loop
+        return (0); /* No loop */
 }
