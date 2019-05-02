@@ -7,7 +7,7 @@
  *
  * Return: new_node
  */
-listint_t *add_nodeint(listint_t **head, const int n)
+listint_t *insert_nodeint(listint_t **head, int number)
 {
 	/* new node to inserted at end of list */
 	listint_t *new_node;
