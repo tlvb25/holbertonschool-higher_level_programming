@@ -9,7 +9,6 @@ if __name__ == '__main__':
         if args == 1:
                 print("{:d}".format(sum))
         else:
-                print("{:d} arguments:".format(args -1))
                 for i in range(1, args):
                         sum += int(argv[i])
                         print("{:d}".format(sum))
