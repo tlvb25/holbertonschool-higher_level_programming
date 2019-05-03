@@ -11,14 +11,14 @@ if __name__ == '__main__':
         if args != 4:
                 print("Usage: ./100-my_calculator.py <a> <operator> <b>")
                 exit(1)
-        if c != "+" or c != "/" or c != "*" or c != "-":
-                print("Unknown operator. Available operators: +, -, * and /")
-                exit(1)
         if c == "+":
                 print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
         elif c == "-":
                 print("{:d} - {:d} = {:d}".format(a, b, sub(a, b)))
         elif c == "*":
                 print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
-        else:
+        elif c == "/":
                 print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
+        else:                        
+                print("Unknown operator. Available operators: +, -, * and /")
+                exit(1)
