@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 if __name__ == '__main__':
-    from sys import *
-    from calculator_1 import *
+    from sys import argv
+    from calculator_1 import add, sub, add, mul
     args = len(argv)
     a = int(argv[1])
     b = int(argv[3])
