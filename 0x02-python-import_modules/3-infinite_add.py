@@ -11,4 +11,4 @@ if __name__ == '__main__':
         else:
                 for i in range(1, args):
                         sum += int(argv[i])
-                        print("{:d}".format(sum))
+                print("{:d}".format(sum))
