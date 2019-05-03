@@ -5,7 +5,7 @@ if __name__ == '__main__':
 
     args = len(argv)
 
-    operan = {add: '+', sub: '-', mul: '*', div: '/'}
+    operan = {'+': add, '-': sub, '*': mul, '/': div}
 
     if args != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
