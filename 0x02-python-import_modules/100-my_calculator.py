@@ -4,11 +4,11 @@ if __name__ == '__main__':
         from sys import *
 
         args = len(argv)
-        a = argv[0]
-        c = argv[1]
-        b = argv[2]
+        a = argv[1]
+        c = argv[2]
+        b = argv[3]
 
-        if args < 3 or args > 3:
+        if args < 4 or args > 4:
                 print("Usage: ./100-my_calculator.py <a> <operator> <b>")
                 exit(1)
         if c != "+" or c != "/" or c != "*" or c != "-":
