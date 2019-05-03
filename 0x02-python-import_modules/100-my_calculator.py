@@ -4,9 +4,9 @@ if __name__ == '__main__':
         from sys import *
 
         args = len(argv)
-        a = argv[1]
-        c = argv[2]
-        b = argv[3]
+        a = argv[2]
+        c = argv[3]
+        b = argv[4]
 
         if args < 3 or args > 3:
                 print("Usage: ./100-my_calculator.py <a> <operator> <b>")
