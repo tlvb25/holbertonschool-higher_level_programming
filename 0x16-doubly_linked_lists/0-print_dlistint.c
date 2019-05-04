@@ -8,7 +8,7 @@
  */
 size_t print_dlistint(const dlistint_t *h)
 {
-	const dlistint_t *last;
+	
 	unsigned int count = 0;
 
 
@@ -16,7 +16,7 @@ size_t print_dlistint(const dlistint_t *h)
 	{
 		printf("%d\n", h->n);
 		count++;
-		last = h;
+		
 		h = h->next;
 	}
 	return (count);
