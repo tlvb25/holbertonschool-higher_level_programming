@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def weight_average(my_list=[]):
-        if my_list is "":
+        if not my_list:
                 return 0
         sum1 = 0
         for tuples in my_list:
