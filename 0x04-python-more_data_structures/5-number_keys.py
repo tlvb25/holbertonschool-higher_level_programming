@@ -1,3 +1,4 @@
 #!/usr/bin/python3
 def number_keys(a_dictionary):
-        return a.dictionary.count(':')
+        nb_keys = a_dictionary.count(':')
+        return nb_keys
