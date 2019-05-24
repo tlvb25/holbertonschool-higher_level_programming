@@ -17,6 +17,10 @@ class Square:
     def size(self):
         return self.__size
 
+    @property
+    def position(self):
+        return self.__position
+
     @position.setter
     def position(self, value):
         if type(value) is not tuple or len(value) is not 2:
@@ -27,9 +31,6 @@ class Square:
             raise TypeError('size must be an integer')
         self.__position = value
 
-    @property
-    def position(self):
-        return self.__position
 
     def area(self):
         return self.__size ** 2
