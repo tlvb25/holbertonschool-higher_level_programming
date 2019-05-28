@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 def text_indentation(text):
+    newstr = ""
     if not isinstance(text, str):
         raise TypeError('text must be a string')
 
-    for char in text:
-        print(char.strip(), end="")
-        if char is '.' or char is '?' or char is ':':
-            print()
-            print()
+    for delim in ".:?":
+        text = (delim + "\n\n").join(
+            [line.strip(" ") for line in text.split(delim)])
+
+    print("{}".format(text), end="")
