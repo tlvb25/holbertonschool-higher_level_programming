@@ -48,7 +48,7 @@ class Rectangle:
             return ("")
         custom_symbol = str(self.print_symbol)
         string = (custom_symbol * self.__width + '\n') * (
-            self.__height - 1)
+            self.__height - 1) + (custom_symbol * self.__width)
         return string
 
     def __repr__(self):
