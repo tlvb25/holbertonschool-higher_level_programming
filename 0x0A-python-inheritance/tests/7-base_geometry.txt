@@ -1,0 +1,85 @@
+The ``7-base_geometry`` module
+======================
+
+Using the ``BaseGeometry`` class
+----------------------
+
+This is an example text file in reStructuredText format.  First import
+``BaseGeometry`` from the ``7-base_geometry`` module:
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Now use it:
+    
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("width", 4)
+    4
+
+    Test second argument is negative
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("height", -4)
+    Traceback (most recent call last):
+    ValueError: width must be greater than 0
+
+    Test if the 2nd argument is 0:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("width", 0)
+    Traceback (most recent call last):
+    ValueError: width must be greater than 0
+
+    Test parameter is an integer:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator(8, 4)
+    4
+
+    Test if there is only 1 argument and is an int:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator(88)
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+    Test if there is no arguments:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+    Test if the 1st argument is a empty string:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("", 12)
+    12
+
+    Test valid int
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("my_int", 8)
+    8
+
+    Test if both arguments are empty strings:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("", "")
+    Traceback (most recent call last):
+    TypeError:  must be an integer
+
+    Test if the 2nd argument is a float:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("width", 5.9)
+    Traceback (most recent call last):
+    TypeError: width must be an integer
+
+     Test string as parameters:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("width", "betty")
+    Traceback (most recent call last):
+    TypeError: width must be an integer
+
+    Test for cannot convert float NaN to integer:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("width", float("NaN"))
+    Traceback (most recent call last):
+    TypeError: width must be an integer
+
+    Test if only 1  argument and it's a string:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("jjk")
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
