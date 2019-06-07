@@ -17,6 +17,12 @@ Now use it:
     >>> my_list.print_sorted()
     []
 
+    Test for instantation:
+    >>>ml = MyList()
+    >>>isinstance(ml, list)
+    True
+
+
     Test with alphabet:
     >>> my_list = MyList()
     >>> my_list.append(a)
