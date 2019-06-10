@@ -7,3 +7,5 @@ def read_lines(filename="", nb_lines=0):
             for line in a_file:
                 print(line, end="")
                 nb_lines -= 1
+                if nb_lines <= 0:
+                    break
