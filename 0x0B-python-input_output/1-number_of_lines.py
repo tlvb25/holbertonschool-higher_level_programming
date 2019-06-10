@@ -3,7 +3,6 @@
     contains method number_of_lines
 '''
 
-
 def number_of_lines(filename=""):
     '''
         returns num of lines in textfile
