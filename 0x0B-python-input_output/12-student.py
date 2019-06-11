@@ -7,7 +7,7 @@ class Student:
 
     def to_json(self, attrs=None):
         if not isinstance(attrs, list) or not all(
-                isinstance(s, str) for s in attrs):
+                isinstance(strings, str) for strings in attrs):
             return self.__dict__
         dictionary = {}
         for elements in attrs:
