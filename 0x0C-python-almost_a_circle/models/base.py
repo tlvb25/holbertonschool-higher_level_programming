@@ -2,6 +2,7 @@
 import json
 import os
 
+
 class Base:
 
     __nb_objects = 0
@@ -12,14 +13,14 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-    
+
     @staticmethod
     def to_json_string(list_dictionaries=[]):
         if list_dictionaries is None or not list_dictionaries:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
-    
+
     @classmethod
     def save_to_file(cls, list_objs):
         list = [] if list_objs is None else [
@@ -27,7 +28,7 @@ class Base:
         filename = cls.__name__ + '.json'
         with open(filename, mode='w+') as a_file:
             a_file.write(cls.to_json_string(list))
-    
+
     def from_json_string(json_string):
         if json_string is None or not json_string:
             return []
