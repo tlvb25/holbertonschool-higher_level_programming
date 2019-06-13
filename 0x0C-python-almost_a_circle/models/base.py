@@ -34,6 +34,7 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+            
     @classmethod
     def create(cls, **dictionary):
         dummy = cls(8, 8, 8, 8)
