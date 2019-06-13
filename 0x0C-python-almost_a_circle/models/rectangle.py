@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from models.base import Base
 
+
 class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -79,7 +80,8 @@ class Rectangle(Base):
 
     def display(self):
         string1 = ('\n' * self.y)
-        string2 = ((" " * self.x) + '#' * self.__width + '\n') * ((self.__height) -1)
+        string2 = ((" " * self.x) + '#' * self.__width + '\n') * (
+                (self.__height) -1)
         string3 = ((" " * self.x) + '#' * self.__width)
         print(string1 + string2 + string3)
 
@@ -112,6 +114,6 @@ class Rectangle(Base):
                     self.y = kwargs['y']
 
     def to_dictionary(self):
-        class_dict = {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height, 'width': self.width}
+        class_dict = {'x': self.x, 'y': self.y, 'id': self.id,\
+             'height': self.height, 'width': self.width}
         return class_dict
-     
