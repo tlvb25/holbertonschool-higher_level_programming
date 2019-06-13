@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+This module will be the “Base” of all other classes in this project.
+"""
+
+
 import json
 import os
 
