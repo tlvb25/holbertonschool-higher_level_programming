@@ -44,4 +44,5 @@ class Square(Rectangle):
             class_dict['size'] = self.width
             class_dict['x'] = self.x
             class_dict['y'] = self.y
+            return class_dict
             

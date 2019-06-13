@@ -112,9 +112,6 @@ class Rectangle(Base):
                     self.y = kwargs['y']
 
     def to_dictionary(self):
-        class_dict = {}
-        class_dict['id'] = self.id
-        class_dict['width'] = self.width
-        class_dict['height'] = self.height
-        class_dict['x'] = self.x
-        class_dict['y'] = self.y
+        class_dict = {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height, 'width': self.width}
+        return class_dict
+     
