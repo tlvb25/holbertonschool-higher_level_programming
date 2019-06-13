@@ -86,8 +86,8 @@ class Rectangle(Base):
         print(string1 + string2 + string3)
 
     def __str__(self):
-        return '[Rectangle] ({}) {}/{} - {}/{}'.format(self.id, self.x,\
-                self.y, self.width, self.height)
+        return '[Rectangle] ({}) {}/{} - {}/{}'.format(
+            self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
         if args:
@@ -115,6 +115,10 @@ class Rectangle(Base):
                     self.y = kwargs['y']
 
     def to_dictionary(self):
-        class_dict = {'x': self.x, 'y': self.y, 'id': self.id\
-                , 'height': self.height, 'width': self.width}
-        return class_dict
+        dictionary = {}
+        dictionary["id"] = self.id
+        dictionary["width"] = self.width
+        dictionary["height"] = self.height
+        dictionary["x"] = self.x
+        dictionary["y"] = self.y
+        return dictionary
