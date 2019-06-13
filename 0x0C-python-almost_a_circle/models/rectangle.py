@@ -81,12 +81,13 @@ class Rectangle(Base):
     def display(self):
         string1 = ('\n' * self.y)
         string2 = ((" " * self.x) + '#' * self.__width + '\n') * (
-                (self.__height) -1)
+                (self.__height) - 1)
         string3 = ((" " * self.x) + '#' * self.__width)
         print(string1 + string2 + string3)
 
     def __str__(self):
-        return '[Rectangle] ({}) {}/{} - {}/{}'.format(self.id, self.x, self.y, self.width, self.height)
+        return '[Rectangle] ({}) {}/{} - {}/{}'.format(self.id, self.x,\
+             self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
         if args:
