@@ -34,7 +34,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Method
+        """Method Save to File 
         """
         list = [] if list_objs is None else [
                 x.to_dictionary() for x in list_objs]
