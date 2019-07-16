@@ -1,8 +1,14 @@
 #!/usr/bin/python3
+"""This module will be the “Base” of all other classes in this project.
+"""
+
+
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """Square Class
+    """
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(id=id, x=x, y=y, width=size, height=size)
 
