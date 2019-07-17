@@ -1,3 +1,4 @@
 -- Cities of California
 SELECT id, name
-FROM cities;
+FROM cities
+WHERE state_id='1';
