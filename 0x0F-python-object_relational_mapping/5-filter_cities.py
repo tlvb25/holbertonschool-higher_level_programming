@@ -7,7 +7,7 @@ from sys import argv
 if __name__ == "__main__":
 
     # assigning the 3 parameters to argv[]
-    user, password, database = argv[1], argv[2], argv[3]
+    user, password, database, state= argv[1], argv[2], argv[3], argv[4]
 
     #storing entire database connection into variable 'db'
     db = MySQLdb.connect(host=localhost,
@@ -20,7 +20,12 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     # # HERE I have to know SQL to grab all states in my database
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    cur.execute("""
+    SELECT name FROM cities 
+    WHERE state_id=(SELECT id 
+    FROM states 
+    WHERE states.name="{}"
+    """.format(state))
 
     # all rows in the states table
     query_rows = cur.fetchall()
@@ -28,3 +33,7 @@ if __name__ == "__main__":
         print(row)
     cur.close()
     db.close()
+
+    SELECT name
+    FROM cities
+    WHERE state_id=(SELECT id FROM states WHERE states.name="Texas");

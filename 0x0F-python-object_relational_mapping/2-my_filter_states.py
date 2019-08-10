@@ -6,21 +6,18 @@ from sys import argv
 
 if __name__ == "__main__":
 
-    # assigning the 3 parameters to argv[]
-    user, password, database = argv[1], argv[2], argv[3]
-
     #storing entire database connection into variable 'db'
     db = MySQLdb.connect(host=localhost,
                          port=3306,
-                         user=user,
-                         passwd=password,
-                         db=database)
+                         user=argv[1],   # using argv[] variables directly
+                         passwd=argv[2], # using argv[] variables directly
+                         db=argv[3])     # using argv[] variables directly
 
     # must use databse cursor obj in order to execute queries
     cur = db.cursor()
 
     # # HERE I have to know SQL to grab all states in my database
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    cur.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(argv[4]))
 
     # all rows in the states table
     query_rows = cur.fetchall()
@@ -28,3 +25,4 @@ if __name__ == "__main__":
         print(row)
     cur.close()
     db.close()
+    

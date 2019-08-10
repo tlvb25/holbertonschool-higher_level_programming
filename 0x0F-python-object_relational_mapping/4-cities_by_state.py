@@ -20,10 +20,13 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     # # HERE I have to know SQL to grab all states in my database
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    cur.execute("SELECT cities.id, cities.name, states.name FROM cities" +
+                "INNER JOIN states ON cities.state_id=states.id" + 
+                "ORDER BY cities.id")
 
     # all rows in the states table
     query_rows = cur.fetchall()
+    count = 0
     for row in query_rows:
         print(row)
     cur.close()
