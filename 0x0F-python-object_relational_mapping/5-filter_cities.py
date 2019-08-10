@@ -29,11 +29,8 @@ if __name__ == "__main__":
 
     # all rows in the states table
     query_rows = cur.fetchall()
-    for row in query_rows:
-        print(row)
-    cur.close()
-    db.close()
 
-    SELECT name
-    FROM cities
-    WHERE state_id=(SELECT id FROM states WHERE states.name="Texas");
+    #joining position 1 of row slice with a comma
+    print(", ".join([row[1] for row in query_rows]))
+    cur.close()
+    conn.close()
