@@ -5,7 +5,7 @@ from sys import argv
 
 
 if __name__ == "__main__":
-
+    
     # storing entire database connection into variable 'db'
     db = MySQLdb.connect(host="localhost",
                          port=3306,
@@ -19,7 +19,8 @@ if __name__ == "__main__":
 
     # # HERE I have to know SQL to grab all states in my database
     cur.execute("""SELECT * FROM states
-    WHERE name LIKE BINARY 'N%' ORDER BY id""")
+    WHERE name LIKE BINARY '{}' ORDER BY id"""
+               .format(argv[4]))
 
     # all rows in the states table
     query_rows = cur.fetchall()
