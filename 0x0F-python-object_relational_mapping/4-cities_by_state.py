@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""script lists all states name beg "N" from db hbtn_0e_0_usa"""
+"""script lists all states whose name beg "N" """
 import MySQLdb
 from sys import argv
 
