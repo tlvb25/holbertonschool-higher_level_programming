@@ -9,7 +9,7 @@ if __name__ == "__main__":
     # assigning the 3 parameters to argv[]
     user, password, database = argv[1], argv[2], argv[3]
 
-    #storing entire database connection into variable 'db'
+    # storing entire database connection into variable 'db'
     db = MySQLdb.connect(host="localhost",
                          port=3306,
                          charset="utf8",
