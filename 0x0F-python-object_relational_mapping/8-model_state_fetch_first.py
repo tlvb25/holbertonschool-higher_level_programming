@@ -3,8 +3,8 @@
 
 from sys import argv
 from model_state import Base, State
-from sqlalchemy import (create_engine)
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session
 
 if __name__ == "__main__":
     engine = create_engine(
@@ -14,9 +14,9 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     session = Session(engine)
-    query = session.query(State).order_by(State.id).first()
-    if query:
-        print("{}: {}".format(s.id, s.name))
+    state = session.query(State).order_by(State.id).first()
+    if state:
+        print("{}: {}".format(state.id, state.name))
     else:
         print("Nothing")
     session.close()
