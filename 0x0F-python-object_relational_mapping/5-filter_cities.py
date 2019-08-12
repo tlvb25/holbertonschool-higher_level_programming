@@ -21,11 +21,12 @@ if __name__ == "__main__":
 
     # # HERE I have to know SQL to grab all states in my database
     cur.execute("""
-    SELECT name FROM cities
-    WHERE state_id=(SELECT id
-    FROM states
-    WHERE states.name="{}"
-    """.format(state))
+    SELECT cities.name FROM cities
+    JOIN states
+    ON state_id=states.id
+    WHERE states.name LIKE BINARY %s
+    ORDER BY cities.id
+    """, (state,))
 
     # all rows in the states table
     query_rows = cur.fetchall()
