@@ -12,7 +12,7 @@ class State(Base):
     """State ORM class"""
 
     __tablename__ = "states"
-   
+
     id = Column(Integer, primary_key=True, nullable=False,
                 autoincrement=True, unique=True)
 
