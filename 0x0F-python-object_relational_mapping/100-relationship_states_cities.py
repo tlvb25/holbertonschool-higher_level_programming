@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-"""Improve the files model_city.py and model_state.py, and save
-them as relationship_city.py and relationship_state.py"""
+"""Create California"""
 from sys import argv
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine
-from relationship_state import State
-from relationship_city import City, Base
+from relationship_state import Base, State
+from relationship_city import City
+from sqlalchemy import (create_engine)
+from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == "__main__":
@@ -22,6 +21,7 @@ if __name__ == "__main__":
     newState = State(name="California")
     session.add(newState)
     session.commit()
+  
     newCity = City(name="San Francisco", state_id=new_state.id)
     session.add(newCity)
     session.commit()
