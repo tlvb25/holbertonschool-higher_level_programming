@@ -11,7 +11,7 @@ if __name__ == "__main__":
     cur.execute("""SELECT * FROM states
     WHERE name LIKE BINARY 'N%' ORDER BY id""")
     query = cur.fetchall()
-    for i in query:
-        print(i)
+    for row in query:
+        print(row)
     cur.close()
     conn.close()
