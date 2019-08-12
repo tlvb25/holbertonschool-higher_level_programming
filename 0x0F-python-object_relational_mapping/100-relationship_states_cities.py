@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Improve the files model_city.py and model_state.py, and save
 them as relationship_city.py and relationship_state.py"""
-import sys
+from sys import argv
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 from relationship_state import State
