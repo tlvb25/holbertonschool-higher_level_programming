@@ -10,7 +10,7 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost",
                          port=3306,
                          charset="utf-8",
-                         user=argv[1],  # using argv[] variables directly
+                         user=argv[1],  
                          passwd=argv[2], # using argv[] variables directly
                          db=argv[3])     # using argv[] variables directly
 
@@ -18,8 +18,7 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     # # HERE I have to know SQL to grab all states in my database
-    cur.execute(
-        "SELECT * FROM states WHERE WHERE name = %s ORDER BY id ASC".format(argv[4]))
+    cur.execute("""SELECT * FROM states WHERE WHERE name = %s ORDER BY id ASC""".format(argv[4]))
 
     # all rows in the states table
     query_rows = cur.fetchall()
