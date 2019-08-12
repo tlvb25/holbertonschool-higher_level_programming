@@ -12,6 +12,7 @@ if __name__ == "__main__":
     #storing entire database connection into variable 'db'
     db = MySQLdb.connect(host="localhost",
                          port=3306,
+                         charset="utf8",
                          user=user,
                          passwd=password,
                          db=database)
