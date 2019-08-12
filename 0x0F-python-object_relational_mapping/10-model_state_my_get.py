@@ -14,7 +14,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     session = session(engine)
     query = session.query(State)\
-            .filter(State.name == argv[4]).order_by(State.id).all()
+        .filter(State.name == argv[4]).order_by(State.id).all()
 
     if query:
         print(query.id)
