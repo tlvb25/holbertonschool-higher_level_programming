@@ -7,10 +7,10 @@ from sys import argv
 if __name__ == "__main__":
 
     # assigning the 3 parameters to argv[]
-    user, password, database, state= argv[1], argv[2], argv[3], argv[4]
+    user, password, database, state = argv[1], argv[2], argv[3], argv[4]
 
-    #storing entire database connection into variable 'db'
-    db = MySQLdb.connect(host=localhost,
+    # storing entire database connection into variable 'db'
+    db = MySQLdb.connect(host="localhost",
                          port=3306,
                          user=user,
                          passwd=password,
@@ -21,16 +21,16 @@ if __name__ == "__main__":
 
     # # HERE I have to know SQL to grab all states in my database
     cur.execute("""
-    SELECT name FROM cities 
-    WHERE state_id=(SELECT id 
-    FROM states 
+    SELECT name FROM cities
+    WHERE state_id=(SELECT id
+    FROM states
     WHERE states.name="{}"
     """.format(state))
 
     # all rows in the states table
     query_rows = cur.fetchall()
 
-    #joining position 1 of row slice with a comma
+    # joining position 1 of row slice with a comma
     print(", ".join([row[1] for row in query_rows]))
     cur.close()
     conn.close()
