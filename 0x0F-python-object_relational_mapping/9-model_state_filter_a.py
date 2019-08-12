@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""script prints all State objects that contain
-letter 'a' from database hbtn_0e_6_usa"""
-from sys import argv
+"""script list all State objects that contain
+letter 'a' """
+import sys
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 from model_state import Base, State
@@ -13,9 +13,11 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
 
     Base.metadata.create_all(engine)
-    session = Session(engine)
-    query = session.query(State).filter(State.name.like('%a%')).order_by(State.id)
 
-    for state in query:
+    session = Session(engine)
+
+    q = session.query(State).filter(State.name.like('%a%')).order_by(State.id)
+
+    for state in q:
         print("{}: {}".format(state.id, state.name))
     session.close()
