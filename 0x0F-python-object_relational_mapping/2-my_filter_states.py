@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""script takes an argument and displays all rows in states table
- of database hbtn_0e_0_usa where name matches the argument"""
+"""script takes arguments and displays all rows in states table
+that matches argv[4]"""
 from sys import argv
 import MySQLdb
 
@@ -14,7 +14,7 @@ if __name__ == '__main__':
         """SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id"""
         .format(state))
     query = cur.fetchall()
-    for i in query:
-        print(i)
+    for row in query:
+        print(row)
     cur.close()
     db.close()
