@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-"""
-script that lists all State objects from the DB hbtn_0e_6_usa
-"""
-from sys import argv
-from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
+"""script lists all State objects from the DB hbtn_0e_6_usa"""
+import sys
 from model_state import Base, State
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine
+
 
 if __name__ == "__main__":
 
