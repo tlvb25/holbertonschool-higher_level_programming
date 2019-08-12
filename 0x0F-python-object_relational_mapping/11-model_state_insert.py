@@ -24,5 +24,5 @@ if __name__ == "__main__":
 
     state = session.query(State).filter_by(name='Louisiana').all()
 
-    print(state.id)
+    print(state[0].id)
     session.close()
