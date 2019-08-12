@@ -25,9 +25,8 @@ if __name__ == "__main__":
                 "ORDER BY cities.id")
 
     # all rows in the states table
-    query_rows = cur.fetchall()
-    count = 0
-    for row in query_rows:
+    query = cur.fetchall()
+    for row in query:
         print(row)
     cur.close()
     db.close()
