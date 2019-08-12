@@ -9,10 +9,11 @@ if __name__ == "__main__":
     # assigning the 3 parameters to argv[]
     user, password, database = argv[1], argv[2], argv[3]
 
-    #storing entire database connection into variable 'db'
-    db = MySQLdb.connect(host=localhost,
+    # storing entire database connection into variable 'db'
+    db = MySQLdb.connect(host="localhost",
                          port=3306,
                          user=user,
+                         charset="utf8",
                          passwd=password,
                          db=database)
 
@@ -28,4 +29,3 @@ if __name__ == "__main__":
         print(row)
     cur.close()
     db.close()
-    
