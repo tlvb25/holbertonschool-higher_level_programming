@@ -17,7 +17,8 @@ if __name__ == "__main__":
 
     session = Session(engine)
 
-    query = session.query(State).filter(State.name.like('%a%')).order_by(State.id)
+    query = session.query(State)\
+        .filter(State.name.like('%a%')).order_by(State.id)
     for row in query:
         session.delete(row)
     session.commit()
