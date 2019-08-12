@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """script lists all states from the database"""
-from sys import argv
+import argv
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 from model_city import City
