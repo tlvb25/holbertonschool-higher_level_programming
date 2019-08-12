@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """script that adds new State
 'Louisiana' to the database"""
-import sys
+from sys import argv
 from model_state import Base, State
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
@@ -24,8 +24,6 @@ if __name__ == "__main__":
     session.commit()
 
     state = session.query(State).filter_by(name='Louisiana').first()
-
-    
 
     print(state.id)
     session.close()
