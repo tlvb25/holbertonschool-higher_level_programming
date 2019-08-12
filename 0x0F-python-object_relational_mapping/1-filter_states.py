@@ -21,11 +21,11 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     # # HERE I have to know SQL to grab all states in my database
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
 
     # all rows in the states table
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
     cur.close()
-    db.close()
+    conn.close()
