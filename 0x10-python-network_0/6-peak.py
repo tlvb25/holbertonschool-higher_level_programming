@@ -10,7 +10,7 @@ def find_peak(list_of_integers):
     if l == 2:
         return max(list_of_integers)
 
-    mid = list_of_integers//2
+    mid = l//2
 
     peak = list_of_integers[mid]
     left = list_of_integers[mid - 1]
