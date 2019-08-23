@@ -19,6 +19,6 @@ def find_peak(list_of_integers):
     if peak > left and peak > right:
         return peak
     elif peak < left:
-        return list_of_integers[:mid]
+        return find_peak(list_of_integers[:mid])
     else:
-        return list_of_integers[mid:]
+        return find_peak(list_of_integers[mid:])
