@@ -10,8 +10,8 @@ if __name__ == "__main__":
     l = j.get('results')
     print('Number of results:', j.get('count'))
     while j.get('next') is not None:
-        r = requests.get(j.get('next'))
-        j = r.json()
+        response = requests.get(j.get('next'))
+        j = response.json()
         l += j.get('results')
     for i in l:
         print(i.get('name'))
