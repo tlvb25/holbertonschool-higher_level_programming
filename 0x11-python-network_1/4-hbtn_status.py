@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ What's my status? #1"""
-import request
+import requests
 
 
 if __name__ == "__main__":
