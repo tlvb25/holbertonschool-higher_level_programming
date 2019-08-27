@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Response header value #1 """
 from sys import argv
-import request
+import requests
 
 
 if __name__ == "__main__":
