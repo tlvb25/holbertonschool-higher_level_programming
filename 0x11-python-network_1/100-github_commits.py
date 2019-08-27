@@ -1,17 +1,16 @@
 #!/usr/bin/python3
-""" Time for an interview! """
+"""Time for an interview!"""
+from sys import argv
+import requests
+
 
 if __name__ == "__main__":
-
-    import requests
-    import sys
-
-    response = requests.get("https://api.github.com/repos/{}/{}/commits".
-                            format(sys.argv[2], sys.argv[1]))
-    if response.status_code != 200:
-        print("None")
-    else:
-        data = response.json()
-        for t in data[0:10]:
-            print("{}: {}".format(t.get('sha'),
-                                  t.get('commit').get('author').get('name')))
+    resp = requests.get('https://api.github.com/repos/{}/{}/commits'
+                     .format(argv[2], argv[1]))
+    l = resp.json()
+    try:
+        for i in range(10):
+            print(l[i].get('sha'), l[i].get('commit')
+                  .get('author').get('name'), sep=": ")
+    except:
+        pass
