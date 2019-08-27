@@ -3,7 +3,7 @@
 
 if __name__ == "__main__":
 
-    import urllib.requests
+    import urllib.request
     import sys
 
     with urllib.request.urlopen(sys.argv[1]) as r:
