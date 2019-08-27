@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Error code #0 """
-import urllib.requests
+import urllib.request
 import urllib.parse
 from sys import argv
 
