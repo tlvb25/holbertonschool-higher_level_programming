@@ -5,8 +5,8 @@ import requests
 
 
 if __name__ == "__main__":
-    resp = requests.get(argv[1])
-    if resp.status_code < 400:
-        print(resp.text)
+    response = requests.get(argv[1])
+    if response.status_code < 400:
+        print(response.text)
     else:
-        print('Error code:', resp.status_code)
+        print('Error code:', response.status_code)
