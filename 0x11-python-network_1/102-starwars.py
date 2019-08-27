@@ -5,7 +5,8 @@ import requests
 
 
 if __name__ == "__main__":
-    response = requests.get('https://swapi.co/api/people/?search={}'.format(argv[1]))
+    response = requests.get('https://swapi.co/api/people/?search={}'
+                            .format(argv[1]))
     j = response.json()
     l = j.get('results')
     print('Number of results:', j.get('count'))
