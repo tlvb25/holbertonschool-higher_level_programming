@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-""" Time for an interview!  """
+""" Time for an interview! """
 
 if __name__ == "__main__":
 
     import requests
     import sys
 
-    response = requests.get("https://api.github.com/repos/{}/{}/commits".
-                            format(sys.argv[2], sys.argv[1]))
+    response = requests.get("https://api.github.com/repos/{}/{}/commits".format(
+        sys.argv[2], sys.argv[1]))
     if response.status_code != 200:
         print("None")
     else:
