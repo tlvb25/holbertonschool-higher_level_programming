@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-import urllib.request
 """urlib.request usage"""
+
+import urllib.request
 
 if __name__ == "__main__":
     with urllib.request.urlopen('http://python.org/') as response:
