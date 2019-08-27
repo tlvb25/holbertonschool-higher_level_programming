@@ -2,7 +2,7 @@
 """Python script that takes your Github credentials (username and password)
 and uses the Github API to display your id"""
 from sys import argv
-import requests
+import urllib.request
 
 
 if __name__ == "__main__":
