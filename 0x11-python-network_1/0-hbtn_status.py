@@ -4,6 +4,7 @@
 if __name__ == "__main__":
 
     import urllib.request
+    import urllib.parse
 
     with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
         html = response.read()
