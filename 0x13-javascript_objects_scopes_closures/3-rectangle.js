@@ -6,10 +6,10 @@ module.exports = class Rectangle {
       this.width = w;
       this.height = h;
     }
-}
+  }
 
-print () {
-  let a = 'X'.repeat(this.width) + '\n';
+  print () {
+    let a = 'X'.repeat(this.width) + '\n';
     a = a.repeat(this.height);
     console.log(a.slice(0, -1));
   }
